@@ -1,4 +1,8 @@
-from models import Account
+from dk_webapp_api.settings import DEBUG
+if DEBUG:
+    from models import Account
+else:
+    from apps.users.models import Account
 
 class AccountService():
 

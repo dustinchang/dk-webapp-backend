@@ -5,12 +5,15 @@ from django.shortcuts import render
 from dk_webapp_api.settings import DEBUG
 from rest_framework import viewsets, status
 from rest_framework.response import Response
-(from account_service import AccountService) if DEBUG else (from apps.users.account_service import AccountService)
+if DEBUG:
+    from account_service import AccountService
+else:
+    from apps.users.account_service import AccountService
 
-(from serializers import AccountSerializers) if DEBUG else (from apps.users.account_service import AccountService)
-
-from apps.users.serializers import AccountSerializers
-
+if DEBUG:
+    from serializers import AccountSerializers
+else:
+    from apps.users.serializers import AccountSerializers
 
 class AccountViewSet(viewsets.GenericViewSet):
     serializer_class = AccountSerializers
