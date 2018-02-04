@@ -4,10 +4,9 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 from rest_framework import viewsets, status
 from rest_framework.response import Response
-from serializers import AccountSerializers
-from account_service import AccountService
+from apps.users.account_service import AccountService
+from apps.users.serializers import AccountSerializers
 
-# Create your views here.
 class AccountViewSet(viewsets.GenericViewSet):
     serializer_class = AccountSerializers
     account_service = AccountService()
