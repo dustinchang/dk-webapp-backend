@@ -131,7 +131,7 @@ STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'dk-webapp-api/static'),
+    os.path.join(BASE_DIR, 'dk_webapp_api/static'),
 )
 
 # Simplified static file serving.
