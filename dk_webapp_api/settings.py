@@ -25,7 +25,7 @@ SECRET_KEY = 'ttwgi=6vm$sd09s#91&$a#@6j5*!m5l&_j7v17j!o4m@+6k%w!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['dk-webapp.herokuapp.com']
 
 
 # Application definition
