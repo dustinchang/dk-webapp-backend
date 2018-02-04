@@ -21,5 +21,5 @@ router = routers.DefaultRouter()
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url('', include('apps.users.urls'))
+    url(r'^$', include('apps.users.urls'))
 ]
