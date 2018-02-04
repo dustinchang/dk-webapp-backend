@@ -25,7 +25,7 @@ SECRET_KEY = 'ttwgi=6vm$sd09s#91&$a#@6j5*!m5l&_j7v17j!o4m@+6k%w!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dk-webapp.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['dk-webapp.herokuapp.com', 'localhost', '127.0.0.1', '0.0.0.0']
 
 
 # Application definition
@@ -127,7 +127,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'dk_webapp_api/staticfiles')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
@@ -136,4 +136,5 @@ STATICFILES_DIRS = (
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'

@@ -4,8 +4,8 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 from rest_framework import viewsets, status
 from rest_framework.response import Response
-from apps.users.account_service import AccountService
-from apps.users.serializers import AccountSerializers
+from account_service import AccountService
+from serializers import AccountSerializers
 
 class AccountViewSet(viewsets.GenericViewSet):
     serializer_class = AccountSerializers
