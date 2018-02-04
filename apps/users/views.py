@@ -2,10 +2,15 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
+from dk_webapp_api.settings import DEBUG
 from rest_framework import viewsets, status
 from rest_framework.response import Response
-from account_service import AccountService
-from serializers import AccountSerializers
+(from account_service import AccountService) if DEBUG else (from apps.users.account_service import AccountService)
+
+(from serializers import AccountSerializers) if DEBUG else (from apps.users.account_service import AccountService)
+
+from apps.users.serializers import AccountSerializers
+
 
 class AccountViewSet(viewsets.GenericViewSet):
     serializer_class = AccountSerializers
